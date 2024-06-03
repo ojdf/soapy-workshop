@@ -1,0 +1,68 @@
+simName:
+pupilSize: 100
+nGS: 1
+nDM: 0
+nSci: 2
+nIters: 5000
+loopTime: 0.001
+threads: 4
+
+verbosity: 2
+
+saveCMat: False
+saveSlopes: True
+saveDmCommands:   False
+saveLgsPsf: False
+saveSciPsf: True
+
+
+Atmosphere:
+  scrnNo: 1
+  scrnHeights: [0]
+  scrnStrengths: [1]
+  windDirs: [0]
+  windSpeeds: [10]
+  wholeScrnSize: 2048
+  r0: 0.16
+  L0: [20]
+  infinite: True
+
+
+Telescope:
+  telDiam: 1.
+  obsDiam: 0.3
+  mask: circle
+
+WFS:
+  0:
+    type: ShackHartmann
+    GSPosition: [0, 0]
+    GSHeight: 0
+    GSMag: 8
+    nxSubaps: 8
+    pxlsPerSubap: 10
+    subapFOV: 10
+    wavelength: 600e-9
+
+DM:
+
+Reconstructor:
+  type: MVM
+  svdConditioning: 0.03
+  gain: 0.6
+
+Science:
+  0:
+    position: [0, 0]
+    FOV: 2.5
+    wavelength: 600e-9
+    pxls: 64
+    instStrehlWithTT: True
+
+  1:
+    position: [0, 0]
+    FOV: 2.5
+    wavelength: 1550e-9
+    pxls: 64
+    instStrehlWithTT: True
+
